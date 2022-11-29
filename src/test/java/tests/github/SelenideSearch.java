@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideSearch {
+
     @BeforeAll
     static void beforeAll (){
         Configuration.startMaximized = true;
@@ -20,6 +21,5 @@ public class SelenideSearch {
         $("[placeholder='Search GitHub']").setValue("Selenide").pressEnter();
         $$(".repo-list li").first().$("a").click();
         $(".mr-2.flex-self-stretch").should(text("selenide"));
-        sleep(5000);
     }
 }
